@@ -21,6 +21,8 @@
     <!--#if (UseSqlite)-->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
     <!--#endif-->
+    <PackageReference Include="System.Security.Cryptography.Xml" />
+    <PackageReference Include="OpenTelemetry.Api" />
   </ItemGroup>
 
   <ItemGroup>

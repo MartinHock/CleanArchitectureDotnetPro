@@ -32,6 +32,7 @@
     <PackageVersion Include="Scalar.AspNetCore" Version="2.13.22" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
     <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.17.0" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.7" />
     <!--#if(!UseApiOnly)-->
     <PackageVersion Include="Microsoft.Playwright" Version="1.59.0" />
     <PackageVersion Include="Reqnroll.NUnit" Version="3.3.4" />
@@ -55,7 +56,8 @@
     <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.2.2" />
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.4.0" />
     <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.4.0" />
-    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.2" />
+    <PackageVersion Include="OpenTelemetry.Api" Version="1.15.3" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.15.3" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.15.2" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.15.1" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.15.0" />
