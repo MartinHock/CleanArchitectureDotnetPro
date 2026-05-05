@@ -65,10 +65,17 @@ jobs:
       working-directory: generated
       shell: pwsh
       run: |
-        $clientAppPath = switch ('${{ matrix.client-framework }}') {
-          'angular' { 'src/Web/ClientApp' }
-          'react' { 'src/Web/ClientApp-React' }
-          default { throw "Unsupported client framework: ${{ matrix.client-framework }}" }
+        $clientAppCandidates = @(
+          'src/Web/ClientApp',
+          'src/Web/ClientApp-React'
+        )
+
+        $clientAppPath = $clientAppCandidates |
+          Where-Object { Test-Path (Join-Path (Get-Location) $_) } |
+          Select-Object -First 1
+
+        if (-not $clientAppPath) {
+          throw "No client app directory was found under generated/src/Web."
         }
 
         Push-Location $clientAppPath
@@ -105,6 +112,10 @@ jobs:
       working-directory: generated
       shell: pwsh
       run: |
+        Write-Host 'Client app directories:'
+        Get-ChildItem -Path src/Web -Directory -ErrorAction SilentlyContinue |
+          Select-Object FullName
+
         Write-Host 'Acceptance test projects:'
         Get-ChildItem -Path tests -Recurse -Filter *.csproj |
           Where-Object { $_.FullName -like '*AcceptanceTests*' } |
