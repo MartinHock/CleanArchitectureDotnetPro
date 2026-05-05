@@ -62,27 +62,80 @@ jobs:
 
     - name: Build client app
       if: matrix.client-framework != 'none'
-      working-directory: generated/src/Web/ClientApp
+      working-directory: generated
+      shell: pwsh
       run: |
-        npm ci
-        npm run build
+        $clientAppPath = switch ('${{ matrix.client-framework }}') {
+          'angular' { 'src/Web/ClientApp' }
+          'react' { 'src/Web/ClientApp-React' }
+          default { throw "Unsupported client framework: ${{ matrix.client-framework }}" }
+        }
+
+        Push-Location $clientAppPath
+        try {
+          npm ci
+          npm run build
+        }
+        finally {
+          Pop-Location
+        }
+
+    - name: Build acceptance tests
+      if: matrix.client-framework != 'none'
+      working-directory: generated
+      run: dotnet build tests/Web.AcceptanceTests/Web.AcceptanceTests.csproj --configuration Release
 
     - name: Install Playwright browsers
       if: matrix.client-framework != 'none'
       working-directory: generated
       shell: pwsh
       run: |
-        $playwrightScript = Get-ChildItem -Path artifacts -Recurse -Filter playwright.ps1 |
+        $playwrightScript = Get-ChildItem -Path . -Recurse -Filter playwright.ps1 |
+          Where-Object { $_.FullName -like '*Web.AcceptanceTests*' } |
           Select-Object -First 1 -ExpandProperty FullName
 
         if (-not $playwrightScript) {
-          throw "playwright.ps1 was not found under generated/artifacts after build."
+          throw "playwright.ps1 was not found under the generated solution after build."
         }
 
         & $playwrightScript install --with-deps chromium
 
+    - name: Diagnose acceptance test paths
+      if: ${{ failure() && matrix.client-framework != 'none' }}
+      working-directory: generated
+      shell: pwsh
+      run: |
+        Write-Host 'Acceptance test projects:'
+        Get-ChildItem -Path tests -Recurse -Filter *.csproj |
+          Where-Object { $_.FullName -like '*AcceptanceTests*' } |
+          Select-Object FullName
+
+        Write-Host 'Playwright scripts:'
+        Get-ChildItem -Path . -Recurse -Filter playwright.ps1 |
+          Select-Object FullName
+
+        Write-Host 'Acceptance test output directories:'
+        Get-ChildItem -Path artifacts -Recurse -Directory |
+          Where-Object { $_.FullName -like '*AcceptanceTests*' -or $_.FullName -like '*Web.AcceptanceTests*' } |
+          Select-Object FullName
+
     
 
-    - name: Test solution
+    - name: Test non-acceptance projects
       working-directory: generated
-      run: dotnet test --no-build --configuration Release
+      shell: pwsh
+      run: |
+        $testProjects = Get-ChildItem -Path tests -Recurse -Filter *.csproj |
+          Where-Object { $_.Name -ne 'Web.AcceptanceTests.csproj' }
+
+        foreach ($project in $testProjects) {
+          dotnet test $project.FullName --no-build --configuration Release
+          if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+          }
+        }
+
+    - name: Test acceptance tests
+      if: matrix.client-framework != 'none'
+      working-directory: generated
+      run: dotnet test tests/Web.AcceptanceTests/Web.AcceptanceTests.csproj --no-build --configuration Release
