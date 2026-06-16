@@ -1,4 +1,4 @@
-<Project Sdk="Aspire.AppHost.Sdk/13.2.2">
+﻿<Project Sdk="Aspire.AppHost.Sdk/13.2.2">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -16,6 +16,7 @@
     <!--#endif-->
     <!--#if (UseSqlite)-->
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.SQLite" />
+    <PackageReference Include="MessagePack" />
     <!--#endif-->
   </ItemGroup>
 
