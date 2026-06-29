@@ -59,7 +59,20 @@ jobs:
       
     #if (!UseApiOnly)
     - name: Install Playwright browsers
-      run: pwsh artifacts/bin/Web.AcceptanceTests/release/playwright.ps1 install --with-deps chromium
+      shell: pwsh
+      run: |
+        if (-not (Test-Path 'tests/Web.AcceptanceTests/Web.AcceptanceTests.csproj')) {
+          Write-Host 'Web.AcceptanceTests project not present. Skipping browser install.'
+          exit 0
+        }
+
+        $playwrightScript = 'artifacts/bin/Web.AcceptanceTests/release/playwright.ps1'
+
+        if (-not (Test-Path $playwrightScript)) {
+          throw "Expected Playwright script was not generated at '$playwrightScript'."
+        }
+
+        & $playwrightScript install --with-deps chromium
     #endif
 
     - name: Test solution
