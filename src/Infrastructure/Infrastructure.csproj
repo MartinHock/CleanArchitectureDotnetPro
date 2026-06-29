@@ -20,6 +20,7 @@
     <!--#endif-->
     <!--#if (UseSqlite)-->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" />
     <!--#endif-->
     <PackageReference Include="System.Security.Cryptography.Xml" />
     <PackageReference Include="OpenTelemetry.Api" />
