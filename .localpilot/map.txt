@@ -1,0 +1,518 @@
+## WORKSPACE EXECUTIVE SUMMARY (YAML)
+# Generated: 2026-06-29T12:09:40.0051277+02:00
+# Root: C:\Users\marti\source\repos\cleanarchitectures\CleanArchitectureDotnetPro
+Architecture:
+  Type: Backend (C#/.NET)
+  Scale: 214 relevant source files
+  Components: 0
+  Controllers: 0
+  Models: 2
+  Services: 2
+---
+- File: src\AppHost\AppHost.csproj
+  Preview: "<Project Sdk='Aspire.AppHost.Sdk/13.2.2'>  <PropertyGroup>   <OutputType>Exe</OutputType>   <RootNamespace>CleanArchitecture.AppHost</RootNamespace>  ..."
+- File: src\Application\Application.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>  <PropertyGroup>   <RootNamespace>CleanArchitecture.Application</RootNamespace>   <AssemblyName>CleanArchitecture.Ap..."
+- File: src\Domain\Domain.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>  <PropertyGroup>   <RootNamespace>CleanArchitecture.Domain</RootNamespace>   <AssemblyName>CleanArchitecture.Domain<..."
+- File: src\Infrastructure\Infrastructure.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>  <PropertyGroup>   <RootNamespace>CleanArchitecture.Infrastructure</RootNamespace>   <AssemblyName>CleanArchitecture..."
+- File: src\ServiceDefaults\ServiceDefaults.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>  <PropertyGroup>   <IsAspireSharedProject>true</IsAspireSharedProject>   <RootNamespace>CleanArchitecture.ServiceDef..."
+- File: src\Shared\Shared.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>  <PropertyGroup>   <RootNamespace>CleanArchitecture.Shared</RootNamespace>   <AssemblyName>CleanArchitecture.Shared<..."
+- File: src\Web\Web.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk.Web'>  <PropertyGroup>   <RootNamespace>CleanArchitecture.Web</RootNamespace>   <AssemblyName>CleanArchitecture.Web</A..."
+- File: tests\Application.FunctionalTests\Application.FunctionalTests.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>   <PropertyGroup>     <RootNamespace>CleanArchitecture.Application.FunctionalTests</RootNamespace>     <AssemblyName..."
+- File: tests\Application.UnitTests\Application.UnitTests.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>   <PropertyGroup>     <RootNamespace>CleanArchitecture.Application.UnitTests</RootNamespace>     <AssemblyName>Clean..."
+- File: tests\Domain.UnitTests\Domain.UnitTests.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>   <PropertyGroup>     <RootNamespace>CleanArchitecture.Domain.UnitTests</RootNamespace>     <AssemblyName>CleanArchi..."
+- File: tests\Infrastructure.IntegrationTests\Infrastructure.IntegrationTests.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>   <PropertyGroup>     <RootNamespace>CleanArchitecture.Infrastructure.IntegrationTests</RootNamespace>     <Assembly..."
+- File: tests\TestAppHost\TestAppHost.csproj
+  Preview: "<Project Sdk='Aspire.AppHost.Sdk/13.2.2'>  <PropertyGroup>   <OutputType>Exe</OutputType>   <RootNamespace>CleanArchitecture.TestAppHost</RootNamespac..."
+- File: tests\Web.AcceptanceTests\Web.AcceptanceTests.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk'>   <PropertyGroup>     <RootNamespace>CleanArchitecture.Web.AcceptanceTests</RootNamespace>     <AssemblyName>CleanAr..."
+- File: .aider.chat.history.md
+  Preview: " # aider chat started at 2026-06-16 12:10:16 > You can skip this check with --no-gitignore  > Add .aider* to .gitignore (recommended)? (Y)es/(N)o [Yes..."
+- File: CleanArchitectureDotnetPro.slnx
+  Preview: "<Solution>  <Folder Name='/.github/'>   <File Path='.github/workflows/build.yml' />   <File Path='.github/workflows/codeql.yml' />   <File Path='.gith..."
+- File: CODE_OF_CONDUCT.md
+  Preview: "# Contributor Covenant Code of Conduct ## Our Pledge In the interest of fostering an open and welcoming environment, we as contributors and maintainer..."
+- File: global.json
+  Preview: "{  'sdk': {   'version': '10.0.203',   'rollForward': 'latestFeature'  } }"
+- File: README-template.md
+  Preview: "# CleanArchitecture The project was generated using the [Clean.Architecture.Solution.Template](caRepositoryUrl) version caPackageVersion. ## Build Run..."
+- File: README.md
+  Preview: "# Clean Architecture Solution Template [![Build](https://github.com/jasontaylordev/CleanArchitecture/actions/workflows/build.yml/badge.svg)](https://g..."
+- File: renovate.json
+  Preview: "{  '$schema': 'https://docs.renovatebot.com/renovate-schema.json',  'extends': [   'config:recommended',   ':semanticCommits',   ':separateMajorReleas..."
+- File: .aspire\settings.json
+  Preview: "{  'appHostPath': '../src/AppHost/AppHost.csproj' }"
+- File: .devcontainer\devcontainer.json
+  Preview: "{   'name': 'CleanArchitecture',   'image': 'mcr.microsoft.com/devcontainers/python:3.13-bullseye',   'features': {     // See https://containers.dev/..."
+- File: .devcontainer\README.md
+  Preview: "# Dev Container This folder contains configuration for running the project inside a **Dev Container** (VS Code Remote Containers or GitHub Codespaces)..."
+- File: .github\FUNDING.yml
+  Preview: "# These are supported funding model platforms github: JasonTaylorDev # Replace with up to 4 GitHub Sponsors-enabled usernames e.g., [user1, user2] # p..."
+- File: .template.config\dotnetcli.host.json
+  Preview: "{  '$schema': 'http://json.schemastore.org/dotnetcli.host',  'symbolInfo': {   'ClientFramework': {    'longName': 'client-framework',    'shortName':..."
+- File: .template.config\ide.host.json
+  Preview: "{  '$schema': 'https://json.schemastore.org/ide.host',  'order': 0,  'icon': 'icon.png',  'symbolInfo': [   {    'id': 'ClientFramework',    'name': {..."
+- File: .template.config\template.json
+  Preview: "{  '$schema': 'https://json.schemastore.org/template',  'author': 'JasonTaylorDev',  'classifications': [   'Angular',   'API',   'Aspire',   'Clean A..."
+- File: .github\ISSUE_TEMPLATE\bug_report.md
+  Preview: "--- name: Bug report 🐛 about: Create a report to help us improve title: '' labels: '' assignees: '' --- **Describe the bug** A clear and concise desc..."
+- File: .github\ISSUE_TEMPLATE\config.yml
+  Preview: "blank_issues_enabled: true contact_links:  - name: Ask a question ❓   url: https://github.com/jasontaylordev/cleanarchitecture/discussions/new   about..."
+- File: .github\ISSUE_TEMPLATE\feature_request.md
+  Preview: "--- name: Feature request ✨ about: Suggest an idea for this project title: '' labels: '' assignees: '' --- **Is your feature request related to a prob..."
+- File: .github\workflows\build.yml
+  Preview: "name: Build on:  pull_request:   branches: [ main ]   paths-ignore:    - '.scripts/**'    - .gitignore    - CODE_OF_CONDUCT.md    - LICENSE    - READM..."
+- File: .github\workflows\codeql.yml
+  Preview: "name: CodeQL on:  push:   branches: [ main ]   paths-ignore:    - .gitignore    - CODE_OF_CONDUCT.md    - LICENSE    - README.md  workflow_dispatch:  ..."
+- File: .github\workflows\release.yml
+  Preview: "name: Release on:  release:   types: [published] permissions:  contents: read jobs:  publish:   name: Publish to NuGet.org   runs-on: ubuntu-latest   ..."
+- File: .github\workflows\test-templates.yml
+  Preview: "name: Test Templates on:  push:   branches: [ main ]  workflow_dispatch: permissions:  contents: read jobs:  test-template:   name: ${{ matrix.client-..."
+- File: docs\decisions\ADR-000-template.md
+  Preview: "# ADR-NNN: Title ## Status <!-- Accepted | Deprecated | Superseded by [ADR-NNN](ADR-NNN-title.md) --> ## Date <!-- YYYY-MM-DD --> ## Context <!-- What..."
+- File: docs\decisions\ADR-001-Use-EFCore-In-Application-Layer.md
+  Preview: "# ADR-001: Use EF Core in the Application Layer ## Status Accepted ## Date 2024-02-29 ## Context The Application layer needs to read and write data. C..."
+- File: docs\decisions\ADR-002-Aspire-For-Orchestration-And-Testing.md
+  Preview: "# ADR-002: Aspire for Orchestration and Testing ## Status Accepted ## Date 2026-03-12 ## Context Before Aspire, the template had no built-in solution ..."
+- File: docs\decisions\ADR-003-MediatR-Contracts-In-Domain.md
+  Preview: "# ADR-003: MediatR.Contracts Reference in Domain ## Status Accepted ## Date 2026-03-16 ## Context Domain events need to integrate with MediatR's pub/s..."
+- File: docs\decisions\README.md
+  Preview: "# Architectural Decision Records This directory contains Architecture Decision Records (ADRs) for the Clean Architecture Solution Template. An ADR cap..."
+- File: src\AppHost\appsettings.Development.json
+  Preview: "{  'Logging': {   'LogLevel': {    'Default': 'Information',    'Microsoft.AspNetCore': 'Warning'   }  } } "
+- File: src\AppHost\appsettings.json
+  Preview: "{  'Logging': {   'LogLevel': {    'Default': 'Information',    'Microsoft.AspNetCore': 'Warning',    'Aspire.Hosting.Dcp': 'Warning'   }  } } "
+- File: src\AppHost\Extensions.cs
+  Symbols: [AspireExtensions]
+  Preview: "internal static class AspireExtensions {   public static IResourceBuilder<T> WithAspNetCoreEnvironment<T>(this IResourceBuilder<T> builder)     where ..."
+- File: src\AppHost\Program.cs
+  Preview: "using CleanArchitecture.Shared; var builder = DistributedApplication.CreateBuilder(args); builder.AddAzureContainerAppEnvironment('aca-env'); #if (Use..."
+- File: src\Application\DependencyInjection.cs
+  Symbols: [DependencyInjection]
+  Preview: "using System.Reflection; using CleanArchitecture.Application.Common.Behaviours; using Microsoft.Extensions.Hosting; namespace Microsoft.Extensions.Dep..."
+- File: src\Application\GlobalUsings.cs
+  Preview: "global using Ardalis.GuardClauses; global using AutoMapper; global using AutoMapper.QueryableExtensions; global using Microsoft.EntityFrameworkCore; g..."
+- File: src\Domain\GlobalUsings.cs
+  Preview: "global using CleanArchitecture.Domain.Common; global using CleanArchitecture.Domain.Entities; global using CleanArchitecture.Domain.Enums; global usin..."
+- File: src\Infrastructure\DependencyInjection.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Infrastructure.Data; using CleanArchitecture.Infrastructure.Data.Interc..."
+- File: src\Infrastructure\GlobalUsings.cs
+  Preview: "global using Ardalis.GuardClauses; global using CleanArchitecture.Shared;"
+- File: src\ServiceDefaults\Extensions.cs
+  Preview: "using Microsoft.AspNetCore.Builder; using Microsoft.AspNetCore.Diagnostics.HealthChecks; using Microsoft.Extensions.DependencyInjection; using Microso..."
+- File: src\Shared\Services.cs
+  Symbols: [Services]
+  Preview: "namespace CleanArchitecture.Shared; public static class Services {   /// <summary>   /// The name of the Web Frontend service.   /// This service is r..."
+- File: src\Web\appsettings.json
+  Preview: "{  'ConnectionStrings': {   'CleanArchitectureDb': 'DataSource=CleanArchitecture.db;Cache=Shared'  },  'Logging': {   'LogLevel': {    'Default': 'Inf..."
+- File: src\Web\appsettings.PostgreSQL.json
+  Preview: "{  'ConnectionStrings': {   'CleanArchitectureDb': 'Server=127.0.0.1;Port=5432;Database=CleanArchitectureDb;Username=admin;Password=password;'  },  'L..."
+- File: src\Web\appsettings.SQLite.json
+  Preview: "{  'ConnectionStrings': {   'CleanArchitectureDb': 'DataSource=CleanArchitecture.db;Cache=Shared'  },  'Logging': {   'LogLevel': {    'Default': 'Inf..."
+- File: src\Web\appsettings.SQLServer.json
+  Preview: "{  'ConnectionStrings': {   'CleanArchitectureDb': 'Server=(localdb)\\mssqllocaldb;Database=CleanArchitectureDb;Trusted_Connection=True;MultipleActive..."
+- File: src\Web\DependencyInjection.cs
+  Preview: "using Azure.Identity; using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Infrastructure.Data; using CleanArchitecture.Web...."
+- File: src\Web\GlobalUsings.cs
+  Preview: "global using Ardalis.GuardClauses; global using CleanArchitecture.Web.Infrastructure; global using MediatR; "
+- File: src\Web\Program.cs
+  Preview: "using CleanArchitecture.Infrastructure.Data; using Scalar.AspNetCore; var builder = WebApplication.CreateBuilder(args); // Add services to the contain..."
+- File: tests\Application.FunctionalTests\FunctionalTestSetup.cs
+  Symbols: [FunctionalTestSetup]
+  Preview: "using Microsoft.Extensions.DependencyInjection; namespace CleanArchitecture.Application.FunctionalTests; [SetUpFixture] public class FunctionalTestSet..."
+- File: tests\Application.FunctionalTests\GlobalUsings.cs
+  Preview: "global using Ardalis.GuardClauses; global using CleanArchitecture.Application.FunctionalTests.Infrastructure; global using CleanArchitecture.Shared; g..."
+- File: tests\Infrastructure.IntegrationTests\GlobalUsings.cs
+  Preview: "global using NUnit.Framework;"
+- File: tests\TestAppHost\Program.cs
+  Symbols: [Main, Program]
+  Preview: "using CleanArchitecture.Shared; namespace CleanArchitecture.TestAppHost; public class Program {   public static void Main(string[] args)   {     var b..."
+- File: tests\Web.AcceptanceTests\AspireSetup.cs
+  Symbols: [AspireSetup]
+  Preview: "using Aspire.Hosting; namespace CleanArchitecture.Web.AcceptanceTests; [SetUpFixture] public class AspireSetup {   private static readonly TimeSpan De..."
+- File: tests\Web.AcceptanceTests\GlobalUsings.cs
+  Preview: "global using CleanArchitecture.Web.AcceptanceTests.Pages; global using CleanArchitecture.Shared; global using Microsoft.Playwright; global using Reqnr..."
+- File: tests\Web.AcceptanceTests\PlaywrightSetup.cs
+  Symbols: [PlaywrightSetup]
+  Preview: "using System.Diagnostics; namespace CleanArchitecture.Web.AcceptanceTests; [SetUpFixture] public class PlaywrightSetup {   private static bool IsHeadl..."
+- File: src\AppHost\Properties\launchSettings.json
+  Preview: "{  '$schema': 'https://json.schemastore.org/launchsettings.json',  'profiles': {   'https': {    'commandName': 'Project',    'dotnetRunMessages': tru..."
+- File: src\Domain\Common\BaseAuditableEntity.cs
+  Symbols: [BaseAuditableEntity]
+  Preview: "namespace CleanArchitecture.Domain.Common; public abstract class BaseAuditableEntity : BaseEntity {   public DateTimeOffset Created { get; set; }   pu..."
+- File: src\Domain\Common\BaseEntity.cs
+  Symbols: [BaseEntity]
+  Preview: "using System.ComponentModel.DataAnnotations.Schema; namespace CleanArchitecture.Domain.Common; public abstract class BaseEntity {   // This can easily..."
+- File: src\Domain\Common\BaseEvent.cs
+  Symbols: [BaseEvent]
+  Preview: "using MediatR; namespace CleanArchitecture.Domain.Common; public abstract class BaseEvent : INotification { } "
+- File: src\Domain\Common\ValueObject.cs
+  Symbols: [ValueObject]
+  Preview: "namespace CleanArchitecture.Domain.Common; // Learn more: https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd..."
+- File: src\Domain\Constants\Roles.cs
+  Symbols: [Roles]
+  Preview: "namespace CleanArchitecture.Domain.Constants; public abstract class Roles {   public const string Administrator = nameof(Administrator); }"
+- File: src\Domain\Entities\TodoItem.cs
+  Symbols: [TodoItem]
+  Preview: "namespace CleanArchitecture.Domain.Entities; public class TodoItem : BaseAuditableEntity {   public int ListId { get; set; }   public string? Title { ..."
+- File: src\Domain\Entities\TodoList.cs
+  Symbols: [TodoList]
+  Preview: "namespace CleanArchitecture.Domain.Entities; public class TodoList : BaseAuditableEntity {   public string? Title { get; set; }   public Colour Colour..."
+- File: src\Domain\Enums\PriorityLevel.cs
+  Preview: "namespace CleanArchitecture.Domain.Enums; public enum PriorityLevel {   None = 0,   Low = 1,   Medium = 2,   High = 3 } "
+- File: src\Domain\Events\TodoItemCompletedEvent.cs
+  Symbols: [TodoItemCompletedEvent, TodoItemCompletedEvent]
+  Preview: "namespace CleanArchitecture.Domain.Events; public class TodoItemCompletedEvent : BaseEvent {   public TodoItemCompletedEvent(TodoItem item)   {     It..."
+- File: src\Domain\Exceptions\UnsupportedColourException.cs
+  Symbols: [base, UnsupportedColourException]
+  Preview: "namespace CleanArchitecture.Domain.Exceptions; public class UnsupportedColourException : Exception {   public UnsupportedColourException(string code) ..."
+- File: src\Domain\ValueObjects\Colour.cs
+  Symbols: [Colour, From]
+  Preview: "namespace CleanArchitecture.Domain.ValueObjects; public class Colour(string code) : ValueObject {   public static Colour From(string code)   {     var..."
+- File: src\Infrastructure\Data\ApplicationDbContext.cs
+  Preview: "using System.Reflection; using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Domain.Entities; using CleanArchitecture.Infra..."
+- File: src\Infrastructure\Data\ApplicationDbContextInitialiser.cs
+  Preview: "using CleanArchitecture.Domain.Constants; using CleanArchitecture.Domain.Entities; using CleanArchitecture.Domain.ValueObjects; using CleanArchitectur..."
+- File: src\Infrastructure\Identity\ApplicationUser.cs
+  Symbols: [ApplicationUser]
+  Preview: "using Microsoft.AspNetCore.Identity; namespace CleanArchitecture.Infrastructure.Identity; public class ApplicationUser : IdentityUser { } "
+- File: src\Infrastructure\Identity\IdentityResultExtensions.cs
+  Symbols: [IdentityResultExtensions]
+  Preview: "using CleanArchitecture.Application.Common.Models; using Microsoft.AspNetCore.Identity; namespace CleanArchitecture.Infrastructure.Identity; public st..."
+- File: src\Infrastructure\Identity\IdentityService.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Application.Common.Models; using Microsoft.AspNetCore.Authorization; us..."
+- File: src\Web\ClientApp\angular.json
+  Preview: "{  '$schema': './node_modules/@angular/cli/lib/config/schema.json',  'version': 1,  'newProjectRoot': 'projects',  'projects': {   'CleanArchitecture...."
+- File: src\Web\ClientApp\karma.conf.js
+  Symbols: [function]
+  Preview: "// Karma configuration file, see link for more information // https://karma-runner.github.io/1.0/config/configuration-file.html module.exports = funct..."
+- File: src\Web\ClientApp\nswag.json
+  Preview: "{  'runtime': 'Net100',  'defaultVariables': null,  'documentGenerator': {   'fromDocument': {    'json': null,    'url': '../wwwroot/openapi/v1.json'..."
+- File: src\Web\ClientApp\package-lock.json
+  Preview: "{  'name': 'cleanarchitecture.web',  'version': '0.0.0',  'lockfileVersion': 3,  'requires': true,  'packages': {   '': {    'name': 'cleanarchitectur..."
+- File: src\Web\ClientApp\package.json
+  Preview: "{  'name': 'cleanarchitecture.web',  'version': '0.0.0',  'scripts': {   'ng': 'ng',   'start': 'run-script-os',   'prestart': 'npm run generate-api',..."
+- File: src\Web\ClientApp\proxy.conf.js
+  Preview: "const { env } = require('process'); const target =  env['services__webapi__https__0'] ||  env['services__webapi__http__0']; const PROXY_CONFIG = [  { ..."
+- File: src\Web\ClientApp\README.md
+  Preview: "# CleanArchitecture.Web This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 21.1.5. ## Development server Ru..."
+- File: src\Web\ClientApp\tsconfig.app.json
+  Preview: "/* To learn more about this file see: https://angular.io/config/tsconfig. */ {  'extends': './tsconfig.json',  'compilerOptions': {   'outDir': './out..."
+- File: src\Web\ClientApp\tsconfig.json
+  Preview: "{  'compileOnSave': false,  'compilerOptions': {   'baseUrl': './',   'outDir': './dist/out-tsc',   'forceConsistentCasingInFileNames': true,   'stric..."
+- File: src\Web\ClientApp\tsconfig.spec.json
+  Preview: "/* To learn more about this file see: https://angular.io/config/tsconfig. */ {  'extends': './tsconfig.json',  'compilerOptions': {   'outDir': './out..."
+- File: src\Web\ClientApp-React\nswag.json
+  Preview: "{  'runtime': 'Net100',  'defaultVariables': null,  'documentGenerator': {   'fromDocument': {    'json': null,    'url': '../wwwroot/openapi/v1.json'..."
+- File: src\Web\ClientApp-React\package-lock.json
+  Preview: "{  'name': 'cleanarchitecture.web',  'version': '0.1.0',  'lockfileVersion': 3,  'requires': true,  'packages': {   '': {    'name': 'cleanarchitectur..."
+- File: src\Web\ClientApp-React\package.json
+  Preview: "{  'name': 'cleanarchitecture.web',  'version': '0.1.0',  'private': true,  'type': 'module',  'dependencies': {   '@picocss/pico': '^2.0.6',   'lucid..."
+- File: src\Web\ClientApp-React\README.md
+  Preview: "# CleanArchitecture React Client This project uses [Vite](https://vitejs.dev/) with React 19 and TypeScript. ## Available Scripts ### `npm start` Runs..."
+- File: src\Web\ClientApp-React\tsconfig.json
+  Preview: "{  'compilerOptions': {   'target': 'ES2020',   'useDefineForClassFields': true,   'lib': ['ES2020', 'DOM', 'DOM.Iterable'],   'module': 'ESNext',   '..."
+- File: src\Web\ClientApp-React\vite.config.ts
+  Preview: "import { defineConfig } from 'vite'; import react from '@vitejs/plugin-react'; const target =  process.env['services__webapi__https__0'] ||  process.e..."
+- File: src\Web\Endpoints\TodoItems.cs
+  Preview: "using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem; using CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem; using Cl..."
+- File: src\Web\Endpoints\TodoLists.cs
+  Preview: "using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList; using CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList; using Cl..."
+- File: src\Web\Endpoints\Users.cs
+  Symbols: [Users]
+  Preview: "using CleanArchitecture.Infrastructure.Identity; using Microsoft.AspNetCore.Http.HttpResults; using Microsoft.AspNetCore.Identity; using Microsoft.Asp..."
+- File: src\Web\Endpoints\WeatherForecasts.cs
+  Symbols: [WeatherForecasts]
+  Preview: "using CleanArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts; using Microsoft.AspNetCore.Http.HttpResults; namespace CleanArchitec..."
+- File: src\Web\Infrastructure\ApiExceptionOperationTransformer.cs
+  Preview: "using Microsoft.AspNetCore.Authorization; using Microsoft.AspNetCore.OpenApi; using Microsoft.OpenApi; namespace CleanArchitecture.Web.Infrastructure;..."
+- File: src\Web\Infrastructure\BearerSecuritySchemeTransformer.cs
+  Preview: "using Microsoft.AspNetCore.Authentication; using Microsoft.AspNetCore.OpenApi; using Microsoft.OpenApi; namespace CleanArchitecture.Web.Infrastructure..."
+- File: src\Web\Infrastructure\EndpointRouteBuilderExtensions.cs
+  Preview: "using System.Diagnostics.CodeAnalysis; namespace CleanArchitecture.Web.Infrastructure; /// <summary> /// Extends <see cref='IEndpointRouteBuilder'/> w..."
+- File: src\Web\Infrastructure\IdentityApiOperationTransformer.cs
+  Preview: "using Microsoft.AspNetCore.OpenApi; using Microsoft.OpenApi; namespace CleanArchitecture.Web.Infrastructure; /// <summary> /// Adds human-readable sum..."
+- File: src\Web\Infrastructure\IEndpointGroup.cs
+  Preview: "namespace CleanArchitecture.Web.Infrastructure; /// <summary> /// Defines a group of related Minimal API endpoints. /// Implementations are automatica..."
+- File: src\Web\Infrastructure\MethodInfoExtensions.cs
+  Symbols: [MethodInfoExtensions]
+  Preview: "using System.Reflection; namespace CleanArchitecture.Web.Infrastructure; public static class MethodInfoExtensions {   // Compiler-generated anonymous ..."
+- File: src\Web\Infrastructure\ProblemDetailsExceptionHandler.cs
+  Preview: "using CleanArchitecture.Application.Common.Exceptions; using Microsoft.AspNetCore.Diagnostics; using Microsoft.AspNetCore.Mvc; namespace CleanArchitec..."
+- File: src\Web\Infrastructure\WebApplicationExtensions.cs
+  Symbols: [WebApplicationExtensions]
+  Preview: "using System.Reflection; namespace CleanArchitecture.Web.Infrastructure; public static class WebApplicationExtensions {   /// <summary>   /// Discover..."
+- File: src\Web\Properties\launchSettings.json
+  Preview: "{  '$schema': 'https://json.schemastore.org/launchsettings.json',  'profiles': {   'http': {    'commandName': 'Project',    'dotnetRunMessages': true..."
+- File: src\Web\Services\CurrentUser.cs
+  Symbols: [CurrentUser]
+  Preview: "using System.Security.Claims; using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Web.Services; public class CurrentUse..."
+- File: templates\ca-use-case\.template.config\dotnetcli.host.json
+  Preview: "{   'symbolInfo': {     'featureName': {       'longName': 'feature-name',       'shortName': 'fn'     },     'returnType': {       'longName': 'retur..."
+- File: templates\ca-use-case\.template.config\template.json
+  Preview: "{  '$schema': 'http://json.schemastore.org/template',  'author': 'JasonTaylorDev',  'classifications': [   'Clean Architecture'  ],  'name': 'Clean Ar..."
+- File: tests\Application.FunctionalTests\Infrastructure\DatabaseResetter.cs
+  Preview: "#if (UsePostgreSQL) using Npgsql; #elif (UseSqlServer) using Microsoft.Data.SqlClient; #else using Microsoft.Data.Sqlite; #endif using Respawn; using ..."
+- File: tests\Application.FunctionalTests\Infrastructure\TestApp.cs
+  Preview: "using CleanArchitecture.Domain.Constants; using CleanArchitecture.Infrastructure.Data; using CleanArchitecture.Infrastructure.Identity; using MediatR;..."
+- File: tests\Application.FunctionalTests\Infrastructure\TestBase.cs
+  Symbols: [SetUp, TestBase]
+  Preview: "namespace CleanArchitecture.Application.FunctionalTests.Infrastructure; public abstract class TestBase {   [SetUp]   public async Task SetUp()   {    ..."
+- File: tests\Application.FunctionalTests\Infrastructure\WebApiFactory.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using Microsoft.AspNetCore.Hosting; using Microsoft.AspNetCore.Mvc.Testing; using Microsoft.Asp..."
+- File: tests\Domain.UnitTests\ValueObjects\ColourTests.cs
+  Symbols: [ColourTests]
+  Preview: "using CleanArchitecture.Domain.Exceptions; using CleanArchitecture.Domain.ValueObjects; using NUnit.Framework; using Shouldly; namespace CleanArchitec..."
+- File: tests\Web.AcceptanceTests\Pages\BasePage.cs
+  Symbols: [BasePage]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.Pages; public abstract class BasePage(IPage page) {   protected static string BaseUrl => AspireSetup.A..."
+- File: tests\Web.AcceptanceTests\Pages\CounterPage.cs
+  Symbols: [BasePage, CounterPage]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.Pages; public class CounterPage(IPage page) : BasePage(page) {   public override string PagePath => $'..."
+- File: tests\Web.AcceptanceTests\Pages\HomePage.cs
+  Symbols: [BasePage, HomePage]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.Pages; public class HomePage(IPage page) : BasePage(page) {   public override string PagePath => BaseU..."
+- File: tests\Web.AcceptanceTests\Pages\LoginPage.cs
+  Symbols: [BasePage, LoginPage]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.Pages; public class LoginPage(IPage page) : BasePage(page) {   public override string PagePath => $'{B..."
+- File: tests\Web.AcceptanceTests\Pages\WeatherPage.cs
+  Symbols: [BasePage, WeatherPage]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.Pages; public class WeatherPage(IPage page) : BasePage(page) {   public override string PagePath => $'..."
+- File: tests\Web.AcceptanceTests\StepDefinitions\CounterStepDefinitions.cs
+  Symbols: [CounterStepDefinitions]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.StepDefinitions; [Binding] public sealed class CounterStepDefinitions(CounterPage counterPage) {   [Be..."
+- File: tests\Web.AcceptanceTests\StepDefinitions\HomeStepDefinitions.cs
+  Symbols: [HomeStepDefinitions]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.StepDefinitions; [Binding] public sealed class HomeStepDefinitions(HomePage homePage) {   [BeforeFeatu..."
+- File: tests\Web.AcceptanceTests\StepDefinitions\LoginStepDefinitions.cs
+  Symbols: [LoginStepDefinitions]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.StepDefinitions; [Binding] public sealed class LoginStepDefinitions(LoginPage loginPage) {   [BeforeFe..."
+- File: tests\Web.AcceptanceTests\StepDefinitions\WeatherStepDefinitions.cs
+  Symbols: [WeatherStepDefinitions]
+  Preview: "namespace CleanArchitecture.Web.AcceptanceTests.StepDefinitions; [Binding] public sealed class WeatherStepDefinitions(WeatherPage weatherPage) {   [Be..."
+- File: src\Application\Common\Behaviours\AuthorizationBehaviour.cs
+  Preview: "using System.Reflection; using CleanArchitecture.Application.Common.Exceptions; using CleanArchitecture.Application.Common.Interfaces; using CleanArch..."
+- File: src\Application\Common\Behaviours\LoggingBehaviour.cs
+  Symbols: [LoggingBehaviour]
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using MediatR.Pipeline; using Microsoft.Extensions.Logging; namespace CleanArchitecture.Applica..."
+- File: src\Application\Common\Behaviours\PerformanceBehaviour.cs
+  Symbols: [PerformanceBehaviour]
+  Preview: "using System.Diagnostics; using CleanArchitecture.Application.Common.Interfaces; using Microsoft.Extensions.Logging; namespace CleanArchitecture.Appli..."
+- File: src\Application\Common\Behaviours\UnhandledExceptionBehaviour.cs
+  Symbols: [UnhandledExceptionBehaviour]
+  Preview: "using Microsoft.Extensions.Logging; namespace CleanArchitecture.Application.Common.Behaviours; public class UnhandledExceptionBehaviour<TRequest, TRes..."
+- File: src\Application\Common\Behaviours\ValidationBehaviour.cs
+  Symbols: [ValidationBehaviour]
+  Preview: "using ValidationException = CleanArchitecture.Application.Common.Exceptions.ValidationException; namespace CleanArchitecture.Application.Common.Behavi..."
+- File: src\Application\Common\Exceptions\ForbiddenAccessException.cs
+  Symbols: [base, ForbiddenAccessException]
+  Preview: "namespace CleanArchitecture.Application.Common.Exceptions; public class ForbiddenAccessException : Exception {   public ForbiddenAccessException() : b..."
+- File: src\Application\Common\Exceptions\ValidationException.cs
+  Symbols: [ValidationException]
+  Preview: "using FluentValidation.Results; namespace CleanArchitecture.Application.Common.Exceptions; public class ValidationException : Exception {   public Val..."
+- File: src\Application\Common\Interfaces\IApplicationDbContext.cs
+  Symbols: [IApplicationDbContext]
+  Preview: "using CleanArchitecture.Domain.Entities; namespace CleanArchitecture.Application.Common.Interfaces; public interface IApplicationDbContext {   DbSet<T..."
+- File: src\Application\Common\Interfaces\IIdentityService.cs
+  Symbols: [IIdentityService]
+  Preview: "using CleanArchitecture.Application.Common.Models; namespace CleanArchitecture.Application.Common.Interfaces; public interface IIdentityService {   Ta..."
+- File: src\Application\Common\Interfaces\IUser.cs
+  Symbols: [IUser]
+  Preview: "namespace CleanArchitecture.Application.Common.Interfaces; public interface IUser {   string? Id { get; }   List<string>? Roles { get; } } "
+- File: src\Application\Common\Models\LookupDto.cs
+  Symbols: [Mapping, LookupDto]
+  Preview: "using CleanArchitecture.Domain.Entities; namespace CleanArchitecture.Application.Common.Models; public class LookupDto {   public int Id { get; init; ..."
+- File: src\Application\Common\Models\Result.cs
+  Symbols: [Result, Result]
+  Preview: "namespace CleanArchitecture.Application.Common.Models; public class Result {   internal Result(bool succeeded, IEnumerable<string> errors)   {     Suc..."
+- File: src\Application\Common\Security\AuthorizeAttribute.cs
+  Symbols: [this]
+  Preview: "namespace CleanArchitecture.Application.Common.Security; /// <summary> /// Specifies the class this attribute is applied to requires authorization. //..."
+- File: src\Application\TodoItems\EventHandlers\LogTodoItemCompleted.cs
+  Symbols: [LogTodoItemCompleted]
+  Preview: "using CleanArchitecture.Domain.Events; using Microsoft.Extensions.Logging; namespace CleanArchitecture.Application.TodoItems.EventHandlers; public cla..."
+- File: src\Infrastructure\Data\Configurations\TodoItemConfiguration.cs
+  Symbols: [TodoItemConfiguration]
+  Preview: "using CleanArchitecture.Domain.Entities; using Microsoft.EntityFrameworkCore; using Microsoft.EntityFrameworkCore.Metadata.Builders; namespace CleanAr..."
+- File: src\Infrastructure\Data\Configurations\TodoListConfiguration.cs
+  Symbols: [TodoListConfiguration]
+  Preview: "using CleanArchitecture.Domain.Entities; using Microsoft.EntityFrameworkCore; using Microsoft.EntityFrameworkCore.Metadata.Builders; namespace CleanAr..."
+- File: src\Infrastructure\Data\Interceptors\AuditableEntityInterceptor.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Domain.Common; using Microsoft.EntityFrameworkCore; using Microsoft.Ent..."
+- File: src\Infrastructure\Data\Interceptors\DispatchDomainEventsInterceptor.cs
+  Symbols: [DispatchDomainEventsInterc]
+  Preview: "using CleanArchitecture.Domain.Common; using MediatR; using Microsoft.EntityFrameworkCore; using Microsoft.EntityFrameworkCore.Diagnostics; namespace ..."
+- File: src\Web\ClientApp\src\main.ts
+  Preview: "import { enableProdMode } from '@angular/core'; import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; import { AppModule } from ..."
+- File: src\Web\ClientApp\src\polyfills.ts
+  Preview: "/** * This file includes polyfills needed by Angular and is loaded before the app. * You can add your own extra polyfills to this file. * * This file ..."
+- File: src\Web\ClientApp\src\test.ts
+  Preview: "// This file is required by karma.conf.js and loads recursively all the .spec and framework files import 'zone.js/testing'; import { getTestBed } from..."
+- File: src\Web\ClientApp-React\src\App.jsx
+  Preview: "import React, { Component } from 'react'; import { Route, Routes } from 'react-router-dom'; import AppRoutes from './AppRoutes'; import { Layout } fro..."
+- File: src\Web\ClientApp-React\src\AppRoutes.jsx
+  Preview: "import { Counter } from './components/Counter'; import { Weather } from './components/Weather'; import { Tasks } from './components/Todo'; import { Ho..."
+- File: src\Web\ClientApp-React\src\main.jsx
+  Preview: "import './styles.scss'; import React from 'react'; import { createRoot } from 'react-dom/client'; import { BrowserRouter } from 'react-router-dom'; im..."
+- File: src\Web\ClientApp-React\src\vite-env.d.ts
+  Preview: "/// <reference types='vite/client' /> "
+- File: tests\Application.FunctionalTests\TodoItems\Commands\CreateTodoItemTests.cs
+  Preview: "using CleanArchitecture.Application.Common.Exceptions; using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem; using CleanArchitecture...."
+- File: tests\Application.FunctionalTests\TodoItems\Commands\DeleteTodoItemTests.cs
+  Preview: "using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem; using CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem; using Cl..."
+- File: tests\Application.FunctionalTests\TodoItems\Commands\UpdateTodoItemDetailTests.cs
+  Preview: "using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem; using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem; using Cl..."
+- File: tests\Application.FunctionalTests\TodoItems\Commands\UpdateTodoItemTests.cs
+  Preview: "using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem; using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem; using Cl..."
+- File: tests\Application.FunctionalTests\TodoLists\Commands\CreateTodoListTests.cs
+  Preview: "using CleanArchitecture.Application.Common.Exceptions; using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList; using CleanArchitecture...."
+- File: tests\Application.FunctionalTests\TodoLists\Commands\DeleteTodoListTests.cs
+  Preview: "using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList; using CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList; using Cl..."
+- File: tests\Application.FunctionalTests\TodoLists\Commands\UpdateTodoListTests.cs
+  Preview: "using CleanArchitecture.Application.Common.Exceptions; using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList; using CleanArchitecture...."
+- File: tests\Application.FunctionalTests\TodoLists\Queries\GetTodosTests.cs
+  Symbols: [GetT]
+  Preview: "using CleanArchitecture.Application.TodoLists.Queries.GetTodos; using CleanArchitecture.Domain.Entities; using CleanArchitecture.Domain.ValueObjects; ..."
+- File: tests\Application.UnitTests\Common\Behaviours\RequestLoggerTests.cs
+  Preview: "using CleanArchitecture.Application.Common.Behaviours; using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Application.Todo..."
+- File: tests\Application.UnitTests\Common\Exceptions\ValidationExceptionTests.cs
+  Symbols: [ValidationExceptionTests]
+  Preview: "using CleanArchitecture.Application.Common.Exceptions; using FluentValidation.Results; using NUnit.Framework; using Shouldly; namespace CleanArchitect..."
+- File: tests\Application.UnitTests\Common\Mappings\MappingTests.cs
+  Preview: "using System.Runtime.CompilerServices; using AutoMapper; using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Application.To..."
+- File: src\Application\TodoItems\Commands\CreateTodoItem\CreateTodoItem.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Domain.Entities; namespace CleanArchitecture.Application.TodoItems.Comm..."
+- File: src\Application\TodoItems\Commands\CreateTodoItem\CreateTodoItemCommandValidator.cs
+  Symbols: [CreateTodoItemCommandValidator, CreateTodoItemCommandValidator]
+  Preview: "namespace CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem; public class CreateTodoItemCommandValidator : AbstractValidator<CreateTodoI..."
+- File: src\Application\TodoItems\Commands\DeleteTodoItem\DeleteTodoItem.cs
+  Symbols: [DeleteTodoItemCommandHandler]
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem; public record Delete..."
+- File: src\Application\TodoItems\Commands\UpdateTodoItem\UpdateTodoItem.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem; public record Update..."
+- File: src\Application\TodoItems\Commands\UpdateTodoItem\UpdateTodoItemCommandValidator.cs
+  Symbols: [UpdateTodoItemCommandValidator, UpdateTodoItemCommandValidator]
+  Preview: "namespace CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem; public class UpdateTodoItemCommandValidator : AbstractValidator<UpdateTodoI..."
+- File: src\Application\TodoItems\Commands\UpdateTodoItemDetail\UpdateTodoItemDetail.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Domain.Enums; namespace CleanArchitecture.Application.TodoItems.Command..."
+- File: src\Application\TodoLists\Commands\CreateTodoList\CreateTodoList.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Domain.Entities; using CleanArchitecture.Domain.ValueObjects; namespace..."
+- File: src\Application\TodoLists\Commands\CreateTodoList\CreateTodoListCommandValidator.cs
+  Symbols: [CreateTodoListCommandValidator]
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Application.TodoLists.Commands.CreateTodoList; public class CreateT..."
+- File: src\Application\TodoLists\Commands\DeleteTodoList\DeleteTodoList.cs
+  Symbols: [DeleteTodoListCommandHandler]
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList; public record Delete..."
+- File: src\Application\TodoLists\Commands\UpdateTodoList\UpdateTodoList.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Domain.ValueObjects; namespace CleanArchitecture.Application.TodoLists...."
+- File: src\Application\TodoLists\Commands\UpdateTodoList\UpdateTodoListCommandValidator.cs
+  Symbols: [UpdateTodoListCommandValidator]
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList; public class UpdateT..."
+- File: src\Application\TodoLists\Queries\GetTodos\GetTodos.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; using CleanArchitecture.Application.Common.Models; using CleanArchitecture.Application.Common.S..."
+- File: src\Application\TodoLists\Queries\GetTodos\TodoItemDto.cs
+  Symbols: [TodoItemDto]
+  Preview: "using CleanArchitecture.Domain.Entities; namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos; public class TodoItemDto {   public int I..."
+- File: src\Application\TodoLists\Queries\GetTodos\TodoListDto.cs
+  Symbols: [TodoListDto, TodoListDto]
+  Preview: "using CleanArchitecture.Domain.Entities; namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos; public class TodoListDto {   public TodoL..."
+- File: src\Application\TodoLists\Queries\GetTodos\TodosVm.cs
+  Symbols: [TodosVm]
+  Preview: "using CleanArchitecture.Application.Common.Models; namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos; public class TodosVm {   public..."
+- File: src\Application\WeatherForecasts\Queries\GetWeatherForecasts\GetWeatherForecastsQuery.cs
+  Symbols: [GetWeatherForecastsQueryHandler]
+  Preview: "namespace CleanArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts; public record GetWeatherForecastsQuery : IRequest<IEnumerable<We..."
+- File: src\Application\WeatherForecasts\Queries\GetWeatherForecasts\WeatherForecast.cs
+  Symbols: [WeatherForecast]
+  Preview: "namespace CleanArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts; public class WeatherForecast {   public DateTime Date { get; ini..."
+- File: src\Web\ClientApp\src\api-authorization\auth.guard.ts
+  Preview: "import { Injectable } from '@angular/core'; import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router'; import..."
+- File: src\Web\ClientApp\src\api-authorization\auth.service.ts
+  Preview: "import { Injectable } from '@angular/core'; import { BehaviorSubject, Observable, of } from 'rxjs'; import { tap, catchError, map } from 'rxjs/operato..."
+- File: src\Web\ClientApp\src\api-authorization\authorize.interceptor.spec.ts
+  Preview: "import { TestBed, inject } from '@angular/core/testing'; import { provideRouter } from '@angular/router'; import { AuthorizeInterceptor } from './auth..."
+- File: src\Web\ClientApp\src\api-authorization\authorize.interceptor.ts
+  Preview: "import { Injectable } from '@angular/core'; import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/h..."
+- File: src\Web\ClientApp\src\app\app.component.ts
+  Symbols: [AppComponent]
+  Preview: "import { Component } from '@angular/core'; @Component({  standalone: false,  selector: 'app-root',  templateUrl: './app.component.html' }) export clas..."
+- File: src\Web\ClientApp\src\app\app.module.ts
+  Preview: "import { APP_ID, NgModule, inject, provideAppInitializer } from '@angular/core'; import { BrowserModule } from '@angular/platform-browser'; import { F..."
+- File: src\Web\ClientApp\src\app\app.server.module.ts
+  Preview: "import { NgModule } from '@angular/core'; import { ServerModule } from '@angular/platform-server'; import { AppComponent } from './app.component'; imp..."
+- File: src\Web\ClientApp\src\app\theme.service.ts
+  Symbols: [ThemeService, Theme]
+  Preview: "import { Injectable, signal } from '@angular/core'; export type Theme = 'auto' | 'light' | 'dark'; @Injectable({ providedIn: 'root' }) export class Th..."
+- File: src\Web\ClientApp\src\environments\environment.prod.ts
+  Preview: "export const environment = {  production: true }; "
+- File: src\Web\ClientApp\src\environments\environment.ts
+  Preview: "// This file can be replaced during build by using the `fileReplacements` array. // `ng build` replaces `environment.ts` with `environment.prod.ts`. /..."
+- File: src\Web\ClientApp-React\src\components\Counter.jsx
+  Symbols: [Counter]
+  Preview: "import { useState } from 'react'; export function Counter() {  const [count, setCount] = useState(0);  return (   <div>    <h1>Counter</h1>    <p>This..."
+- File: src\Web\ClientApp-React\src\components\Home.jsx
+  Symbols: [Home]
+  Preview: "export function Home() {  return (   <div>    <h1>Welcome</h1>    <p>A full-stack application with a <a href='https://react.dev/'>React</a> frontend a..."
+- File: src\Web\ClientApp-React\src\components\Layout.jsx
+  Symbols: [Layout]
+  Preview: "import { NavMenu } from './NavMenu'; export function Layout({ children }) {  return (   <>    <NavMenu />    <main>{children}</main>   </>  ); } "
+- File: src\Web\ClientApp-React\src\components\NavMenu.jsx
+  Symbols: [AuthLinks, AuthLinks]
+  Preview: "import { Link, useNavigate } from 'react-router-dom'; import { useAuth } from './api-authorization/AuthContext'; import { ThemeToggle } from './ThemeT..."
+- File: src\Web\ClientApp-React\src\components\ThemeContext.jsx
+  Symbols: [useTheme]
+  Preview: "import { createContext, useContext, useEffect, useState } from 'react'; const STORAGE_KEY = 'picoColorScheme'; const ThemeContext = createContext({});..."
+- File: src\Web\ClientApp-React\src\components\ThemeToggle.jsx
+  Preview: "import { Sun, Moon, Laptop } from 'lucide-react'; import { useTheme } from './ThemeContext'; const icons = {  auto: <Laptop size={22} strokeWidth={2} ..."
+- File: src\Web\ClientApp-React\src\components\Todo.jsx
+  Preview: "import { useState, useEffect, useRef } from 'react'; import { Plus, Settings, MoreHorizontal } from 'lucide-react'; import { TodoListsClient, TodoItem..."
+- File: src\Web\ClientApp-React\src\components\Weather.jsx
+  Symbols: [Weather]
+  Preview: "import { useState, useEffect } from 'react'; import { WeatherForecastsClient } from '../web-api-client.ts'; export function Weather() {  const [foreca..."
+- File: templates\ca-use-case\FeatureName\Commands\CleanArchitectureUseCase\CleanArchitectureUseCase.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Application.FeatureName.Commands.CleanArchitectureUseCase; //#if (h..."
+- File: templates\ca-use-case\FeatureName\Queries\CleanArchitectureUseCase\CleanArchitectureUseCase.cs
+  Preview: "using CleanArchitecture.Application.Common.Interfaces; namespace CleanArchitecture.Application.FeatureName.Queries.CleanArchitectureUseCase; //#if (ha..."
+- File: src\Web\ClientApp\src\api-authorization\login\login.component.ts
+  Preview: "import { Component, ChangeDetectorRef } from '@angular/core'; import { Router, ActivatedRoute } from '@angular/router'; import { AuthService } from '...."
+- File: src\Web\ClientApp\src\api-authorization\register\register.component.ts
+  Preview: "import { Component, ChangeDetectorRef } from '@angular/core'; import { Router } from '@angular/router'; import { AuthService } from '../auth.service';..."
+- File: src\Web\ClientApp\src\app\counter\counter.component.spec.ts
+  Preview: "import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing'; import { CounterComponent } from './counter.component'; describe('Cou..."
+- File: src\Web\ClientApp\src\app\counter\counter.component.ts
+  Symbols: [CounterComponent]
+  Preview: "import { Component } from '@angular/core'; @Component({  standalone: false,  selector: 'app-counter-component',  templateUrl: './counter.component.htm..."
+- File: src\Web\ClientApp\src\app\fetch-data\fetch-data.component.ts
+  Preview: "import { ChangeDetectorRef, Component } from '@angular/core'; import { WeatherForecastsClient, WeatherForecast } from '../web-api-client'; @Component(..."
+- File: src\Web\ClientApp\src\app\home\home.component.ts
+  Symbols: [HomeComponent]
+  Preview: "import { Component } from '@angular/core'; @Component({  standalone: false,  selector: 'app-home',  templateUrl: './home.component.html', }) export cl..."
+- File: src\Web\ClientApp\src\app\nav-menu\nav-menu.component.ts
+  Preview: "import { Component } from '@angular/core'; import { Router } from '@angular/router'; import { AuthService } from 'src/api-authorization/auth.service';..."
+- File: src\Web\ClientApp\src\app\theme-toggle\theme-toggle.component.ts
+  Symbols: [The]
+  Preview: "import { Component, computed } from '@angular/core'; import { ThemeService, Theme } from '../theme.service'; @Component({  standalone: false,  selecto..."
+- File: src\Web\ClientApp\src\app\todo\todo.component.ts
+  Preview: "import { Component, OnInit, ViewChild, ElementRef, signal, computed, effect } from '@angular/core'; import { TodoListsClient, TodoItemsClient,  TodoLi..."
+- File: src\Web\ClientApp\src\app\weather\weather.component.ts
+  Preview: "import { ChangeDetectorRef, Component } from '@angular/core'; import { WeatherForecastsClient, WeatherForecast } from '../web-api-client'; @Component(..."
+- File: src\Web\ClientApp-React\src\components\api-authorization\AuthContext.jsx
+  Preview: "import { createContext, useContext, useState, useEffect } from 'react'; import { UsersClient, LoginRequest, RegisterRequest } from '../../web-api-clie..."
+- File: src\Web\ClientApp-React\src\components\api-authorization\LoginPage.jsx
+  Symbols: [LoginPage]
+  Preview: "import { useState } from 'react'; import { useNavigate, useLocation, Link } from 'react-router-dom'; import { useAuth } from './AuthContext'; export f..."
+- File: src\Web\ClientApp-React\src\components\api-authorization\ProtectedRoute.jsx
+  Symbols: [ProtectedRoute]
+  Preview: "import { Navigate, useLocation } from 'react-router-dom'; import { useAuth } from './AuthContext'; export function ProtectedRoute({ children }) {  con..."
+- File: src\Web\ClientApp-React\src\components\api-authorization\RegisterPage.jsx
+  Symbols: [validateEmail, validateEmail]
+  Preview: "import { useState } from 'react'; import { useNavigate, Link } from 'react-router-dom'; import { useAuth } from './AuthContext'; const MIN_PASSWORD_LE..."
