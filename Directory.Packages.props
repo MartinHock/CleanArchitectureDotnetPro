@@ -47,6 +47,7 @@
     <!--#endif-->
     <!--#if (UseSqlite)-->
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.11" />
+    <PackageVersion Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.3" />
     <PackageVersion Include="CommunityToolkit.Aspire.Hosting.SQLite" Version="13.4.0" />
     <!--#endif-->
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.4.6" />
